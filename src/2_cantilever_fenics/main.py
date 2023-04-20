@@ -56,37 +56,38 @@ mprint("Beam theory deflection: ", round(3*rho_g*lx**4/2/E/ly**3, 3))
 file_results = XDMFFile(comm, "output/elasticity_results.xdmf")
 file_results.parameters["flush_output"] = True
 file_results.parameters["functions_share_mesh"] = True
+file_results.parameters["rewrite_function_mesh"] = False
 file_results.write(u_sol)
 
-solvers = (
-    "bicgstab",
-    "cg",
-    "default",
-    "gmres",
-    "minres",
-    "mumps",
-    "petsc",
-    "richardson",
-    "superlu",
-    "tfqmr",
-    "umfpack",
-)
+# solvers = (
+#     "bicgstab",
+#     "cg",
+#     "default",
+#     "gmres",
+#     "minres",
+#     "mumps",
+#     "petsc",
+#     "richardson",
+#     "superlu",
+#     "tfqmr",
+#     "umfpack",
+# )
 
-preconditioners = (
-    "amg",
-    "default",
-    "hypre_amg",
-    "hypre_euclid",
-    "hypre_parasails",
-    "icc",
-    "ilu",
-    "jacobi",
-    "none",
-    "petsc_amg",
-    "sor",
-)
+# preconditioners = (
+#     "amg",
+#     "default",
+#     "hypre_amg",
+#     "hypre_euclid",
+#     "hypre_parasails",
+#     "icc",
+#     "ilu",
+#     "jacobi",
+#     "none",
+#     "petsc_amg",
+#     "sor",
+# )
 
-linesearch = ("basic", "bt", "cp", "l2", "nleqerr")
+# linesearch = ("basic", "bt", "cp", "l2", "nleqerr")
 
 # list_timings(TimingClear.clear, [TimingType.wall])
 

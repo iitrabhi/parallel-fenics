@@ -41,5 +41,5 @@ if rank == 0:
     for i in range(a + (size) * num_per_rank, b + 1):
         total[0] = total[0] + i
     print("The sum of numbers from 1 to 1 000 000: ", int(total[0]))
-    print("time spent with ", size, " threads in milliseconds")
-    print("-----", int((time.time() - start_time) * 1000), "-----")
+    print("-"*80)
+    print("time spent with ", size, " threads is {} milliseconds".format( int((time.time() - start_time) * 1000)))

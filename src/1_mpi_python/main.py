@@ -7,7 +7,7 @@ rank = comm.Get_rank()
 size = comm.Get_size()
 
 a = 1
-b = 10000000
+b = int(10e6)
 
 num_per_rank = b // size # the floor division // rounds the result down to the nearest whole number.
 summ = numpy.zeros(1)

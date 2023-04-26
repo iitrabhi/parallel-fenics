@@ -20,7 +20,7 @@ def sigma(v):
     return lmbda*tr(epsilon(v))*Identity(2) + 2.0*mu*epsilon(v)
 
 
-lx, ly, mul = 10, 1, 3
+lx, ly, mul = 10, 1, 300
 nx, ny = int(lx * mul), int(ly * mul)
 mesh = RectangleMesh(comm, Point(0., 0.), Point(lx, ly), nx, ny, "crossed")
 

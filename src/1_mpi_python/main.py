@@ -15,7 +15,7 @@ summ = numpy.zeros(1)
 temp = 0
 lower_bound = a + rank * num_per_rank
 upper_bound = a + (rank + 1) * num_per_rank
-print("This is processor ", rank, "and I am summing numbers from", lower_bound," to ", upper_bound - 1, flush=True)
+print("This is core ", rank, "and I am summing numbers from", lower_bound," to ", upper_bound - 1, flush=True)
 
 comm.Barrier()
 start_time = time.time()
@@ -42,4 +42,4 @@ if rank == 0:
         total[0] = total[0] + i
     print("The sum of numbers from 1 to 1 000 000: ", int(total[0]))
     print("-"*80)
-    print("time spent with ", size, " threads is {} milliseconds".format( int((time.time() - start_time) * 1000)))
+    print("Time spent with ", size, " cores is {} milliseconds".format( int((time.time() - start_time) * 1000)))
